@@ -16,6 +16,10 @@ namespace Web_Proje.Models
         public int Stock { get; set; }
         public int Price { get; set; }
 
+        public virtual Category Category { get; set; }
+        
+        public int CategoryID { get; set; }
+
 
     }
 }
