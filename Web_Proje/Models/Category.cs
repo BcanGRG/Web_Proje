@@ -11,6 +11,6 @@ namespace Web_Proje.Models
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
 
-        public List <Food> Foods { get; set; }
+        public List <Food> Foods { get; set;  }
     }
 }
