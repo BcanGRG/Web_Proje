@@ -6,36 +6,8 @@ using Web_Proje.Models;
 
 namespace Web_Proje.Repositories
 {
-    public class CategoryRepository
+    public class CategoryRepository:GenericRepository<Category>
     {
-        Context c = new Context();
-
-        public List<Category> CategoryListele()
-        {
-            return c.Categories.ToList();
-        }
-
-        public void CategoryEkle(Category ct)
-        {
-            c.Categories.Add(ct);
-            c.SaveChanges();
-        }
-
-        public void CategorySil(Category ct)
-        {
-            c.Categories.Remove(ct);
-            c.SaveChanges();
-        }
-
-        public void CategoryGuncelle(Category ct)
-        {
-            c.Categories.Update(ct);
-            c.SaveChanges();
-        }
-
-        public void CategoryBul(int id)
-        {
-            c.Categories.Find(id);
-        }
+        
     }
 }
