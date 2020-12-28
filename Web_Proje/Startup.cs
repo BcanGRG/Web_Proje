@@ -33,7 +33,7 @@ namespace Web_Proje
             {
                 endpoints.MapControllerRoute(
                     name:"default",
-                    pattern : "{controller=Category}/{action=Index}/{id?}"
+                    pattern : "{controller=CategoryController}/{action=Index}/{id?}"
                     );
               
             });
