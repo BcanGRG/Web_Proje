@@ -24,6 +24,8 @@ namespace Web_Proje
         {
             if (env.IsDevelopment())
             {
+                //throw new Exception("Test Exception");
+
                 app.UseDeveloperExceptionPage();
             }
 
