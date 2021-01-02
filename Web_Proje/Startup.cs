@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Web_Proje.Interfaces;
+using Web_Proje.Repositories;
 
 namespace Web_Proje
 {
@@ -16,7 +18,11 @@ namespace Web_Proje
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            // İstek yapıldığı zaman ilgili kişiye bir nesne döndürülmesini sağlıyor
+            // Yapı constructor da Interface i gördüğü zaman class dan nesne döndürüyor.
+            services.AddScoped<IKategoriRepository , KategoriRepository>();
+            services.AddScoped<IUrunRepository , UrunRepository>();
+            services.AddScoped<IUrunKategoriRepository , UrunKategoriRepository>();
             services.AddControllersWithViews();
             services.AddRazorPages()
         .AddRazorRuntimeCompilation();
