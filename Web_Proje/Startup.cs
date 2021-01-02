@@ -17,6 +17,9 @@ namespace Web_Proje
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddControllersWithViews();
+            services.AddRazorPages()
+        .AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -24,18 +27,19 @@ namespace Web_Proje
         {
             if (env.IsDevelopment())
             {
-                //throw new Exception("Test Exception");
+               
 
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name:"default",
-                    pattern : "{controller=Category}/{action=Index}/{id?}"
+                    pattern : "{controller=Home}/{action=Index}/{id?}"
                     );
               
             });
