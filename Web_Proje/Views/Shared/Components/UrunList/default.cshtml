@@ -10,7 +10,8 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Ad</h5>
                         <p class="card-text">@item.Fiyat</p>
-                        <a href="#" class="btn btn-primary">Detay</a>
+                           @* Url kısmında local/Home/UrunDetay/id şeklinde bir görünüm olmasını Tag Helper ile sağlamış oldum *@
+                        <a asp-action="UrunDetay" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-primary float-right">Detay Göster</a>
                     </div>
                 </div>
             </div>

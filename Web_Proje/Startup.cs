@@ -19,7 +19,8 @@ namespace Web_Proje
         public void ConfigureServices(IServiceCollection services)
         {
             // İstek yapıldığı zaman ilgili kişiye bir nesne döndürülmesini sağlıyor
-            // Yapı constructor da Interface i gördüğü zaman class dan nesne döndürüyor.
+            // Yapı constructor da Interface i gördüğü zaman class dan nesne döndürüyor. Dependecy Injection
+            // Projeyi değiştireceğim zaman buradaki 2. kısmı değiştirmek yeterli Interface i görfüğü anda gideceği kısmı gösteriyor
             services.AddScoped<IKategoriRepository , KategoriRepository>();
             services.AddScoped<IUrunRepository , UrunRepository>();
             services.AddScoped<IUrunKategoriRepository , UrunKategoriRepository>();
