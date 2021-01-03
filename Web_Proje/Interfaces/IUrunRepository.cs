@@ -8,6 +8,12 @@ namespace Web_Proje.Interfaces
 {
     public interface IUrunRepository : IGenericRepository<Urun>
     {
-        public List<Kategori> KategoriGetir(int urunId);
+        List<Kategori> KategoriGetir(int urunId);
+        void EkleKategori(UrunKategori urunKategori);
+        void SilKategori(UrunKategori urunKategori);
+
+        List<Urun> GetirKategoriIdile(int kategoriId);
+
+
     }
 }

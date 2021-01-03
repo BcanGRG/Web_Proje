@@ -1,11 +1,18 @@
 ﻿@model List<Kategori>
-<div class="list-group">
-    
-       @foreach (var kategori in Model)
-       {
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-        @kategori.Ad
-    </a>
-        }
-    
-</div>
+    <div class="container bg-primary">
+        <div class="list-group ">
+            <a asp-action="Index" asp-controller="Home" class="list-group list-group-item-action
+               @(ViewBag.KategoriId==null?"active":"")">
+                Tüm Kategoriler
+            </a>
+
+            @foreach (var kategori in Model)
+            {
+                <a asp-action="Index" asp-controller="Home" asp-route-kategoriId="@kategori.Id" class="list-group list-group-item-action
+               @(ViewBag.KategoriId?.ToString() == kategori.Id.ToString()?"active":"")">
+                    @kategori.Ad
+                </a>
+            }
+
+        </div>
+    </div>

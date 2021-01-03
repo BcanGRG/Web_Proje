@@ -20,10 +20,10 @@ namespace Web_Proje.Controllers
             _urunRepository = urunRepository;
             _signInManager = signInManager;
         }
-        public IActionResult Index()
+        public IActionResult Index(int? kategoriId)
         {
-
-            return View(_urunRepository.Listele());
+            ViewBag.KategoriId = kategoriId;
+            return View();
         }
 
         public IActionResult UrunDetay(int id)

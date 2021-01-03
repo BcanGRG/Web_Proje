@@ -34,5 +34,6 @@ namespace Web_Proje.Contexts
         public DbSet<UrunKategori> UrunKategoriler { get; set; }
         public DbSet<Urun> Urunler { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
+        public object UrunLer { get; internal set; }
     }
 }

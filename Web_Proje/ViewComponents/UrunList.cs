@@ -15,8 +15,12 @@ namespace Web_Proje.ViewComponents
             _urunRepository = urunRepository;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int? kategoriId)
         {
+            if (kategoriId.HasValue)
+            {
+                return View(_urunRepository.GetirKategoriIdile((int)kategoriId));
+            }
             return View(_urunRepository.Listele());
         }
     }

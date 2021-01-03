@@ -1,10 +1,10 @@
-﻿
+﻿<div class="row">
     <div class="col-md-3">
         @* Aşağıda vermiş olduğumuz Component ismi ile asenkronik yani uyumlu bir biçimde çalışmış olur *@
         @await Component.InvokeAsync("KategoriList")
     </div>
     <div class="col-md-9">
         @* Aşağıda vermiş olduğumuz Component ismi ile asenkronik yani uyumlu bir biçimde çalışmış olur *@
-        @await Component.InvokeAsync("UrunList")
+        @await Component.InvokeAsync("UrunList",new { kategoriId = ViewBag.KategoriId})
     </div>
-
+</div>
