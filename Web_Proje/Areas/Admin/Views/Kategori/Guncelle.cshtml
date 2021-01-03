@@ -1,0 +1,20 @@
+﻿@model KategoriGuncelleModel
+
+<form asp-action="Guncelle" asp-controller="Kategori" asp-area="Admin" method="post"
+      class="w-75 mx-auto p-3" enctype="multipart/form-data">
+    <input type="hidden" asp-for="@Model.Id" />
+    <div class="form-group">
+        <label>Kategori Adı : </label>
+        <span asp-validation-for="@Model.Ad" class="text-danger"></span>
+        <input asp-for="@Model.Ad" />
+    </div>
+
+    <div class="form-group">
+        <a asp-action="Index" asp-controller="Kategori" asp-area="Admin" class="btn btn-warning">Vazgeç</a>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+@section JavaScript{
+    <script src="~/lib/jqueryValidate/jquery.validate.min.js"></script>
+    <script src="~/lib/jqueryValUnob/jquery.validate.unobtrusive.min.js"></script>
+}

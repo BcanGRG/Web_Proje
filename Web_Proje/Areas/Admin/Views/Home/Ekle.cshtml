@@ -1,0 +1,29 @@
+﻿@model UrunEkleModel
+
+<form asp-action="Ekle" asp-controller="Home" asp-area="Admin" method="post"
+      class="w-75 mx-auto p-3" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Ürünün Adı : </label>
+        <span asp-validation-for="@Model.Ad" class="text-danger"></span>
+        <input asp-for="@Model.Ad" />
+    </div>
+
+    <div class="form-group">
+        <label>Ürünün Fiyatı : </label>
+        <span asp-validation-for="@Model.Fiyat" class="text-danger"></span>
+        <input asp-for="@Model.Fiyat" />
+    </div>
+
+    <div class="form-group">
+        <label>Ürünün Resmi : </label>
+        <input type="file" asp-for="@Model.Resim" class="form-control-file" />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+@section JavaScript{
+    <script src="~/lib/jqueryValidate/jquery.validate.min.js"></script>
+    <script src="~/lib/jqueryValUnob/jquery.validate.unobtrusive.min.js"></script>
+}
